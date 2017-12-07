@@ -1,5 +1,12 @@
-pushd $PSScriptRoot\Source
+pushd $PSScriptRoot
 try {
+    git submodule update --init --recursive
+    if(!$?) {
+        throw "Failed to update docdock submodule."
+    }
+
+    cd Source
+
     if(Test-Path  public) {
         rm -r -fo public
     }
