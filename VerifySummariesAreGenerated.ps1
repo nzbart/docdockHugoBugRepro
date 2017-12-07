@@ -6,7 +6,7 @@ try {
 
     ..\ThirdParty\Hugo\hugo.exe
 
-    $html = cat public\test\index.html
+    $html = cat public\test\index.html -Raw
     if($html.Contains('This is a summary.')) {
         Write-Host "The summary is present and working correctly." -Fore Green
     }
